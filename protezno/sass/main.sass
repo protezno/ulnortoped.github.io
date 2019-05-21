@@ -1,0 +1,972 @@
+
+@import "vars"
+@import "fonts"
+@import "libs"
+
+
+::placeholder
+	color: #fff
+
+::selection
+	background-color: $header
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: auto
+	position: relative
+	line-height: 1.5
+	font-family: $default-font
+	overflow-x: auto
+	opacity: 1
+	&.ishome
+	  .site-header
+	    min-height: 700px
+	    height: aut
+	    background-color: #fff
+	    color: #fff
+	    .top-line
+	    padding-top: 25px
+	    position: relative
+	    width: 100%
+	    z-index: 1
+	   
+
+
+
+.h1, .h2, .h3, .h4, .h5, .h6
+	line-height: 1.4
+	text-transform: uppercase
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+
+
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: 100
+	background-color: $dark
+	.pulse
+		position: relative
+		left: 50%
+		top: 50vh
+		margin:
+			left: -40px
+			top: -40px
+		&::before, &::after
+			content: ''
+			border: 5px solid #323232
+			width: 80px
+			height: 80px
+			border-radius: 500px
+			position: absolute
+		&::before
+			animation: pulse-outer .8s ease-in infinite
+		&::after
+			animation: pulse-inner .8s linear infinite
+
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	
+	100%
+		@include opacity(100)
+		transform: scale(1)
+
+
+
+.logo
+	img
+	width: 125px
+	height: auto
+	margin-left: 370px
+	display: block
+
+.phone
+	position: absolute
+	right: 190px
+	top: 70px
+	font-family: RalewayExtraBold
+	font-size: 22px
+	white-space: nowrap
+	display: block
+
+
+.fa
+	color: #555
+	font-size: 23px
+	margin-right: 3px
+
+
+
+section, header
+ position: relative
+ background-size: cover
+ background-position: center
+
+section
+	background-color: #fff
+	&.inverse
+		color: #fff
+		background-color: $dark
+		&.s-call
+			background-color: #fff
+	.h2
+		font-size: 35px
+		font-weight: 800
+		color: $header
+		span
+		 	color: #fff
+
+
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+
+
+
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $redi
+	padding: 15px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease 
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($redi, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&::focus, &::hover
+		text-decoration: none
+		color: #fff
+	&::hover
+		background-color: lighten($redi, 5%)
+		&::after
+			opacity: .22
+	&::active
+		background-color: darken($redi, 5%)
+		&::after
+			opacity: .32	
+	>a
+	&:hover
+	  	 		color: #fff
+	  	 		&::before
+	  	 			color: #fff
+
+
+
+.button-white
+	display: inline-block
+	border: none
+	color: $dark
+	text-decoration: none
+	background-color: $wite
+	padding: 15px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease 
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($wite, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&::focus, &::hover
+		text-decoration: none
+		color: #fff
+	&::hover
+		background-color: lighten($wite, 5%)
+		&::after
+			opacity: .22
+	&::active
+		background-color: darken($wite, 5%)
+		&::after
+			opacity: .32	
+	>a
+	&:hover
+	  	 		color: #fff
+	  	 		&::before
+	  	 			color: #fff
+
+
+
+
+
+.hamburger
+   right: 0
+   position: absolute
+   top: 60px	
+.hamburger-box
+     width: 70px   
+
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+   background-radius: 0
+   width: 34px
+   height: 2px
+   background-color: #fff
+
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::after, .hamburger.is-active .hamburger-inner::before
+	background-color: #fff
+
+.mm-navbar
+ height: auto
+ position: relative
+ border: none
+	.mm-navbar_title
+	 padding: 0
+	 img
+	   width: 128px
+	   height: auto
+	   margin: 10px 0 35px
+
+
+html.mm-opened
+
+.mm-panels > .mm-panel .mm-panel_has-navbar
+ right: -18px
+
+.mm-listitem:after
+	display: none
+
+.mm-listitem_selected>.mm-listitem__text
+   background-color: transparent
+   color: $redi
+
+ 
+.mm-panel:after, .mm-panel:before
+ height: 0
+
+.mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview
+ margin-top: 0
+
+.mm-listview
+	  > li
+	  	> a
+	  	transition: color .25s ease
+	  	padding:
+	  	 	left: 5%
+	  	 	right: 5%
+	  	 	top: 4%
+	  	&:hover
+	  	 		color: $redi
+	  	 		&::before
+	  	 			color: $redi
+
+	  	&:before
+	  	  content: '\f0f0'
+	  	  font-family: fontawesome
+	  	  margin-top: 11px
+	  	  text-decoration: none
+	  	  color: #fff
+	  	  transition: color .25s ease
+
+	   &.active
+		   &>a
+		    color: rgba($redi,20%)
+
+.text-center
+	text-align: center
+
+.glav 
+  font-size: 17px
+
+
+.header-flex
+	display: flex
+	height: 80px
+	position: relative
+	top: 0
+
+.flex-center
+	margin: auto
+
+.header-composition
+	text-align: center
+	position: relative	
+	p
+		margin-top: 30px
+	.button
+		margin-top: 30px
+
+.welcome
+	p
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 20px
+
+		span
+			margin: 0 10px
+		&:before, &:after
+			content: ''
+			height: 1px 
+			width: 100%
+			position: relative
+			background-color: #fff
+			display: inline-block
+	.h3
+		font-weight: 100
+		margin: 0
+		line-height: 1.9
+		border-bottom: 1px solid #fff
+
+
+.header-social
+	position: absolute
+	display: flex
+	right: 0
+	height: 100%
+	border-left: rgba(#fff, .1) 1px solid
+	top: 0
+	padding: 0px 1.5px
+
+.cos
+	margin: auto
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+	a 
+		color: #2c2c2c
+		font-size: 17px
+		display: block
+		background-color: rgba(#3c7a6d, .2) 
+		height: 38px
+		width: 38px
+		text-align: center
+		margin: 15px 0
+		line-height: 42px
+		border-radius: 10em
+		transition: background-color .8s ease
+		&:hover
+			background-color: rgba($redi, .4)
+			&:before
+				color: #fff
+	.fa-instagram:before
+		color: #fff
+		padding: 10px
+	.fa-vk:before
+		color: #fff
+		padding: 6px
+
+
+.header-contacts
+	position: absolute
+	width: 100%
+	bottom: 0
+	left: 0
+	border-top: rgba(#fff, .15) 1px solid
+	margin: auto
+	background-color: rgba(#151515, .55)
+	.row
+		width: 100%
+		margin: 0 30px 0
+		color: #fff
+		font-family: RalewayExtraBold
+		a 
+		 color: #fff
+		.fa
+			margin: -10px 10px 0
+			font-size: 20px
+			color: #326f69
+
+
+
+$colors: $dark, $redi, $header, $blu3, $blu2
+@for $i from 1 through length($colors)
+	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
+		background-color: nth($colors, $i)
+
+
+
+.carousel-services
+	background-color: $dark
+	&-item
+		color: #fff
+		font-size: 14px
+		font-weight: 300
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+		&:hover
+			.carousel-services-image
+				opacity: 1
+		.carousel-logo
+			text-align: center
+			img
+				width: 100px
+				height: auto
+				display: inline-block
+	
+	.owl-item
+		&:nth-child(2n+2)
+			.carousel-services-item
+				flex-direction: column
+	
+	&-image
+		background-size: cover
+		background-position: center
+		opacity: .8 
+		transition: opacity .5s ease
+	&-content
+		// display: flex
+		position: relative
+		padding: 60px 10% 60px
+
+	&-composition
+		margin: auto
+		text-align: center
+		width: 100%
+
+		.h3
+			text-transform: uppercase
+			font-weight: 800
+			font-size: 24px
+			margin-top: 5px
+			margin-bottom: 20px
+			span
+				font-weight: normal
+				font-size: 18px
+				font-weight: 300
+				font-family: RalewayLight
+				display: block
+
+	&-list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		margin-bottom: 20px
+		li
+			padding: 6px
+			border-bottom: 1px solid rgba(#000, .12)
+			&:last-child
+				border-bottom: none
+			strong
+				font-family: firasans, sans-serif
+				color: #4A4A4A
+			.fa
+				font-size: 12px	
+
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%	
+		.fa-angle-double-right
+			&:before
+			background-color: #fff
+			width: 64px
+			height: 64px
+			text-align: center
+			position: absolute
+			line-height: 64px
+			font-size: 26px
+			right: 0
+		.fa-angle-double-left
+			&:before
+			background-color: #fff
+			width: 64px
+			height: 64px
+			text-align: center
+			position: absolute
+			line-height: 64px
+			font-size: 26px
+			left: 0
+
+
+
+
+
+	
+
+
+
+
+
+
+.owl-carousel
+	.owl-item
+		backface-visibility: inherit
+	
+
+
+
+.s
+	&-king, &-review, &-partners
+		padding: 5% 0
+		font-size: 21px
+	
+	&-king
+ 	p
+ 		margin: 30px 0
+		font-family: Garamond 
+ 		font-size: 20px
+ 	a
+ 		margin-top: 35px
+
+	&-call
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: 0%
+		&::before
+			content: ''
+			width: 50%
+			right: 0
+			height: 100%
+			position: absolute
+			background-color: $dark
+
+
+
+
+
+
+.section-overley
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $fon
+		opacity: 0.75
+
+.fotorama
+	background-color: rgba($dark, .4)
+	&__nav
+		&-wrap
+		position: relative
+		bottom: 0px
+		padding: 0 0 0
+		width: 100%
+		
+	&__thumb
+		border: 1px #243f4f solid
+		transition: border-color .9s ease
+		&-border
+			border-color: #383838
+
+	&__arr-
+		&-next, &-prev
+			&::before
+				font-family: fontawesome
+				font-size: 32px
+		&-next
+			&::before
+				content: '\f0a9'
+				font-size: 30px	
+			
+		
+		&-prev
+			&::before
+				content: '\f0a8'
+				font-size: 30px
+				
+
+.carousel
+	&-services
+		&-image
+			border: 1px $dark solid
+		&-content
+			border: 1px $dark solid
+
+
+input, textarea, select
+
+	background-color: transparent
+	color: $redi
+	font-size: 15px
+	font-weight: 800
+	border: $redi 2px solid
+	border-bottom: darken($redi, 20%) 4px solid
+	border-radius: 10px
+	padding: 8px 30px
+	width: 100%
+	margin: 10px 0
+	outline: none
+	display: inline-block
+
+
+.selectize-input 
+	background-color: transparent
+	color: #fff
+	font-size: 15px
+	font-weight: 800
+	border: $redi 2px solid
+	border-bottom: darken($redi, 20%) 4px solid
+	border-radius: 10px
+	padding: 8px 30px
+	width: 100%
+	margin: 10px 0
+	outline: none
+	display: inline-block
+	&.full
+		background-color: transparent
+
+
+.selectize-control .selectize-input,
+.selectize-control.single .selectize-input.input-active
+	background: transparent
+
+
+
+.selectize-control.single .selectize-input, 
+.selectize-control.single .selectize-input
+	input
+		font-size: 15px
+
+.selectize-input.dropdown-active
+	border-radius: none
+	border: none
+	&::before
+	 background-color: transparent
+
+.selectize-control.single
+  	.selectize-input, &.dropdown-active
+  		&::after
+  			border: none
+  			content: '\f103'
+  			font-family: fontawesome
+  			position: absolute
+  			right: 30px
+  			top: 13px
+  			color: $redi
+		
+
+.selectize-control.single
+	.selectize-input, &.dropdown-active
+		&.dropdown-active::after
+			content: '\f102'
+			font-family: fontawesome
+
+
+.selectize-dropdown
+	border: none
+	border-radius: none
+	text-align: left
+	&-content
+		.option
+			background-color: #111
+			padding: 10px 22px
+			font-size: 17px
+			color: #fff
+			font-family: Garamond
+			&.active
+				background-color: $redi
+				transition: all 1.4s ease
+
+	
+
+
+
+
+.text-center
+	text-align: center
+
+
+.success
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	text-transform: uppercase
+	font-weight: bold
+	z-index: 10
+	color: $redi
+	font-size: 35px
+	span
+		margin: auto
+	& ~ *
+		transition: all .10s ease
+	&.active
+		& ~ *
+			opacity: .0
+			filter: blur(10px)
+
+
+.callback
+	padding: 25% 0
+	position: relative
+	&-logo
+		img
+			width: 100px
+			height: auto
+			margin-left: 80px
+
+
+
+	.formhead
+		margin: 0
+		text-transform: uppercase
+		font-size: 30px
+		font-weight: 800
+	p
+		font-family: Garamond
+		font-size: 15px
+		margin-top: 0
+	.button
+		margin: 25px 0
+		border: $redi 2px solid
+		background-color: #111
+		color: #fff
+		border-bottom: darken($redi, 20%) 4px solid
+		border-radius: 10px
+		font-weight: 300
+		font-size: 12px
+		outline: none
+		&:after
+			background-color: #111 
+	
+	input, textarea, select
+		&::-webkit-input-placeholder
+			color: #fff
+			opacity: 1
+		&::-moz-input-placeholder
+			color: #fff
+			opacity: 1
+		&::-ms-input-placeholder
+			color: #fff
+		option
+			background-color: #111
+			font-weight: 300
+			font-size: 15px
+			color: darken(#fff, 20%)
+
+
+.s-review
+	height: 100%
+			
+	.owl-dots
+		width: 100%
+		text-align: center
+		display: inline-block
+		margin-top: 60px
+		.owl-dot
+			width: 8px
+			height: 8px
+			background-color: #fff
+			border-radius: 10em
+			display: inline-block
+			margin: 5px
+			outline: none
+			&.active
+				background-color: $redi
+				transition: all 1.5s ease
+				transform: scale(1.3)
+
+.review
+	margin-top: 20px
+	&-header
+		font-size: 35px
+		font-weight: bold
+		font-family: "Time New Roman"
+		font-style: italic
+	&-data
+		font-size: 19px
+		font-family: "Time New Roman"
+		font-style: italic
+		font-weight: bold
+		color:  rgba(#fff, .6)
+		margin-top: 10px
+	&-stars
+		margin-top: 25px
+		i
+			color: $redi
+			margin: 0 4px
+	&-text
+		margin-top: 40px
+		font-size: 15px
+		color: rgba(#fff, .6)
+
+.reviews
+	text-align: center
+.quotes
+	position: absolute
+	width: 100%
+	&::before, &::after
+		content: ',,'
+		position: absolute
+		top: 203px
+		font-size: 56px
+		color: $redi
+		font-family: 'Times New Roman' , serif
+		font-weight: bold
+		line-height: 0
+		transform: rotate(180deg)
+		display: block
+	&::before
+		top: 240px
+		left: -60px
+	&::after
+		right: -60px
+		transform: rotate(0)
+
+
+
+b, strong
+	font-weight: bold
+
+
+.main-footer
+	background-color: #111
+	padding: 3% 0
+	color: #fff
+	font-size: 14px
+
+.footer-column
+	margin: 25px 0
+	.footer-name
+		text-align: center
+		color: darken(#fff, 30%)
+
+	.cos
+		ul
+			li
+				display: inline-block
+				margin-left: 25px
+				margin-top: 9px
+
+
+.footer-menu
+	ul
+		padding: 0
+		margin: 0
+		list-style-type: none
+
+		li.active
+
+			a
+				color: rgba($redi,10%)
+				&::before
+					color: rgba($redi,10%)
+
+		a
+			color: #fff
+			display: inline-block
+			padding: 4px 0 
+			text-decoration: underline
+			position: relative
+			
+			&:hover, &:focus
+				color: rgba($redi, 60%)
+				transition: all .8s ease
+				text-decoration: none
+			&::before
+				margin: 0 15px
+				content: '\f0f0'
+				font-family: fontawesome
+
+
+
+.footer-addr
+	position: relative
+	font-size: 15px
+	padding-left: 25px
+	margin: 0 0 20px
+	.fa
+		font-size: 14px
+		position: absolute
+		left: 0
+		top: 5px
+
+.map
+	max-height: 200px
+	opacity: .6
+	transition: opacity .5s ease
+	&:hover
+		opacity: 1
+
+ 	
+	 	
+				
+
+				  
+			 		
+.logo-footer
+	width: 100px
+	position: center
+	margin-left: 20px
+
+.top
+	position: fixed
+	bottom: 25px
+	right: -100px
+	background-color: darken(#fff, 40%)
+	z-index: 12
+	border-radius: 10em
+	font-size: 15px
+	width: 25px
+	height: 25px
+	text-align: center
+	line-height: 25px
+	cursor: pointer
+	transition: all .25s ease
+	opacity: .4
+	&:hover
+		color: #fff
+		background-color: $redi
+		opacity: 1
+	.fa
+		color: #fff
+		margin: 0 5px
+	&.active
+		right: 25px
+
+
+
+
+
+
+@import "media" // Always at the end

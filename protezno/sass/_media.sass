@@ -1,0 +1,87 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+	
+// ≥992px
++media-breakpoint-down(md)
+  .welcome
+  	.h3
+  		font-size: 20px
+
+
+
+// ≥768px
++media-breakpoint-down(sm) 
+	.phone
+		top: 5px
+		font-size: 17px
+	.logo
+	 	margin-left: 380px
+	 	display: block
+	
+
+// ≥576px
++media-breakpoint-down(xs)
+ .phone
+ 	font-size: 10px
+ 	text-align: center
+ 	width: 60%
+ 	display: block
+ 	left: 35px
+ .header-composition
+  font-size: 10px
+  width: 80%
+
+ .welcome
+  font-size: 10px
+ 	.h3
+ 		font-size: 10px
+ 		margin-top: 5px
+	p
+		span
+			font-size: 10px
+	strong
+		margin-top: 15px
+ .s-king
+ 	.h2
+ 		font-size: 25px
+
+ .s-call
+ 	&::before
+ 		width: 100%
+
+ .logo
+ 	margin-left: 70px
+ 
+	.quotes
+		display: none
+
+	.social-footer
+		.cos
+			ul
+				margin: 0 70px
+
+
+
+
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
+
